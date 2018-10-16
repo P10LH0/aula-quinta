@@ -2,9 +2,9 @@
 public class Resposta implements java.io.Serializable {
 
     private int status;
-    private float result;
+    private Lista result;
 
-    public Resposta(int status, float result) {
+    public Resposta(int status, Lista result) {
         this.status = status;
         this.result = result;
     }
@@ -17,7 +17,7 @@ public class Resposta implements java.io.Serializable {
         return status;
     }
 
-    public float getResult() {
+    public Lista getResult() {
         return result;
     }
 
@@ -25,7 +25,7 @@ public class Resposta implements java.io.Serializable {
         status = newStatus;
     }
 
-    public void setResult(float newResult) {
+    public void setResult(Lista newResult) {
         result = newResult;
     }
 }

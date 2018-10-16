@@ -7,6 +7,7 @@ public class Requisicao implements Serializable {
     private int operacao;
     private String procura;
     private int tipoConsulta;
+	private int tipoProcura;
 
     public String getProcura() {
         return procura;
@@ -21,10 +22,11 @@ public class Requisicao implements Serializable {
         this.operacao = operacao;
     }
 
-    public Requisicao(String procura, int operacao, int tipoConsulta) {
+    public Requisicao(String procura, int operacao, int tipoConsulta, int tipoProcura) {
         this.procura = procura;
         this.operacao = operacao;
         this.tipoConsulta = tipoConsulta;
+        this.tipoProcura = tipoProcura;
     }
 
     public Lista getLista() {
@@ -34,5 +36,9 @@ public class Requisicao implements Serializable {
     public int getOperacao() {
         return operacao;
     }
-
+ 
+    
+    public int getTipoProcura() {
+    	return this.tipoProcura;
+    }
 }

@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +10,7 @@
  *
  * @author rafael.oliveira
  */
-public class No {
+public class No implements Serializable{
     
     private Pessoa dado;
     private No prox;

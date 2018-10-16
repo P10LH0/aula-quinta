@@ -139,21 +139,21 @@ public class Cliente {
                                     op = JOptionPane.showConfirmDialog(null, "O nome que deseja consultar é:" + nome + "?");
                                 } while (op == JOptionPane.NO_OPTION);
                                 //envia requisição com a lista de pessoas que a operação que será executada, no caso Select
-                                msgReq = new Requisicao(nome, operacao, tipoConsulta);
+                                msgReq = new Requisicao(nome, operacao, tipoConsulta, 1);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 2:
                                 String idade = JOptionPane.showInputDialog(null, "Qual a idade da pessoa?");
                                 tipoConsulta = VerificaTipo(tipoConsulta);
-                                msgReq = new Requisicao(idade, operacao, tipoConsulta);
+                                msgReq = new Requisicao(idade, operacao, tipoConsulta, 2);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 3:
                                 String altura = JOptionPane.showInputDialog(null, "Qual a idade da pessoa?");
                                 tipoConsulta = VerificaTipo(tipoConsulta);
-                                msgReq = new Requisicao(altura, operacao, tipoConsulta);
+                                msgReq = new Requisicao(altura, operacao, tipoConsulta,3);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
@@ -161,8 +161,8 @@ public class Cliente {
                                 int cliente = JOptionPane.showConfirmDialog(null, "Pesquisar por clientes (sim) ou não clientes (não)");
                                 boolean clibool = cliente == JOptionPane.YES_OPTION;
                                 String boolString = String.valueOf(clibool);
-                                msgReq = new Requisicao(boolString, operacao, 8);
-                                c.send(socket, msgReq);
+                                //msgReq = new Requisicao(boolString, operacao, false, 8);
+                                //c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 5:
@@ -194,21 +194,21 @@ public class Cliente {
                                     op = JOptionPane.showConfirmDialog(null, "O nome que deseja excluir é:" + nome + "?");
                                 } while (op == JOptionPane.NO_OPTION);
                                 //envia requisição com a lista de pessoas que a operação que será executada, no caso Select
-                                msgReq = new Requisicao(nome, operacao, tipoConsulta);
+                                msgReq = new Requisicao(nome, operacao, tipoConsulta,1);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 2:
                                 String idade = JOptionPane.showInputDialog(null, "Qual a idade da pessoa?");
                                 tipoConsulta = VerificaTipo(tipoConsulta);
-                                msgReq = new Requisicao(idade, operacao, tipoConsulta);
+                                msgReq = new Requisicao(idade, operacao, tipoConsulta,2);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 3:
-                                String altura = JOptionPane.showInputDialog(null, "Qual a idade da pessoa?");
+                                String altura = JOptionPane.showInputDialog(null, "Qual a altura da pessoa?");
                                 tipoConsulta = VerificaTipo(tipoConsulta);
-                                msgReq = new Requisicao(altura, operacao, tipoConsulta);
+                                msgReq = new Requisicao(altura, operacao, tipoConsulta,3);
                                 c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
@@ -216,8 +216,8 @@ public class Cliente {
                                 int cliente = JOptionPane.showConfirmDialog(null, "Excluir clientes (sim) ou não clientes (não)");
                                 boolean clibool = cliente == JOptionPane.YES_OPTION;
                                 String boolString = String.valueOf(clibool);
-                                msgReq = new Requisicao(boolString, operacao, 8);
-                                c.send(socket, msgReq);
+                                //msgReq = new Requisicao(boolString, operacao, 8);
+                                //c.send(socket, msgReq);
                                 msgRep = (Resposta) c.receive(socket);
                                 break;
                             case 5:
